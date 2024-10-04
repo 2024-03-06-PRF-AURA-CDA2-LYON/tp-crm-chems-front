@@ -1,0 +1,16 @@
+<h2 class="my-4 text-center">Détails du Client</h2>
+<div class="container">
+    <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title">{{ customer?.firstName }} {{ customer?.lastName }}</h5>
+            <p class="card-text"><strong>Nom de l'entreprise : </strong>{{ customer?.companyName }}</p>
+            <p class="card-text"><strong>Email : </strong>{{ customer?.email }}</p>
+            <p class="card-text"><strong>Téléphone : </strong>{{ customer?.phoneNumber }}</p>
+            <p class="card-text"><strong>Adresse : </strong>{{ customer?.address }}</p>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-warning" [routerLink]="['/customers/edit', customer?.id]">Modifier</button>
+            <button class="btn btn-danger ms-2">Supprimer</button>
+        </div>
+    </div>
+</div>

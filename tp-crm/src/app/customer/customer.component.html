@@ -1,6 +1,18 @@
-<h2>Liste des clients</h2>
-<ul>
-  <li *ngFor="let customer of customers">
-    {{ customer.firstName }} {{ customer.lastName }} - {{ customer.companyName }}
-  </li>
-</ul>
+<h2 class="my-4 text-center">Liste des Clients</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-4" *ngFor="let customer of customers">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ customer.firstName }} {{ customer.lastName }}</h5>
+                    <p class="card-text text-muted">{{ customer.companyName }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary" [routerLink]="['/customers', customer.id]">Voir Détails</button>
+                    <button class="btn btn-warning ms-2">Modifier</button>
+                    <button class="btn btn-danger ms-2">Supprimer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,26 @@
-<h2>Liste des prestations</h2>
-<ul>
-    <li *ngFor="let order of orders">
-        {{ order.serviceType }} {{ order.tva }} - {{ order.clientId }} {{ order.nbDays }} {{ order.totalExcludeTax }} {{ order.state }} {{ order.comment }}
-    </li>
-</ul>
+<h2 class="my-4 text-center">Liste des Prestations</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-4" *ngFor="let order of orders">
+            <div class="card mb-4 shadow-sm">
+                <img src="https://picsum.photos/seed/{{ order.serviceType }}/1000/500" class="card-img-top" alt="{{ order.serviceType }}" style="border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ order.serviceType }}</h5>
+                    <p class="card-text text-muted">{{ order.comment }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>État : </strong>
+                        {{ order.state === 1 ? 'Active' : order.state === 2 ? 'Inactif' : 'Inconnu' }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Nombre de jours : </strong>{{ order.nbDays }}
+                    </li>
+                </ul>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary" [routerLink]="['/orders', order.id]">Voir Détails</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
