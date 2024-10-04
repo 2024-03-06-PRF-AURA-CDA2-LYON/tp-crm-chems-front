@@ -1,1 +1,6 @@
-<p>orders works!</p>
+<h2>Liste des prestations</h2>
+<ul>
+    <li *ngFor="let order of orders">
+        {{ order.serviceType }} {{ order.tva }} - {{ order.clientId }} {{ order.nbDays }} {{ order.totalExcludeTax }} {{ order.state }} {{ order.comment }}
+    </li>
+</ul>

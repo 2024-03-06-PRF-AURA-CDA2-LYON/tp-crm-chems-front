@@ -1,4 +1,4 @@
-import { Order } from "./orders.interface";
+import { Orders } from "./orders.interface";
 
 export interface Customer {
     id: number;
@@ -12,5 +12,5 @@ export interface Customer {
     country: string;
     city: string;
     state: number;
-    orders?: Order[];
+    orders?: Orders[];
 }

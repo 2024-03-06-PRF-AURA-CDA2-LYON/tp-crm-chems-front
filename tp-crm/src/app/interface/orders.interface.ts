@@ -1,4 +1,4 @@
-export interface Order {
+export interface Orders {
     id: number;
     serviceType: string;
     tva: number;

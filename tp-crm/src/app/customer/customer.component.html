@@ -1,6 +1,6 @@
 <h2>Liste des clients</h2>
-<ul class="container-fluid">
-  <li class="row" *ngFor="let customer of customers">
+<ul>
+  <li *ngFor="let customer of customers">
     {{ customer.firstName }} {{ customer.lastName }} - {{ customer.companyName }}
   </li>
 </ul>
